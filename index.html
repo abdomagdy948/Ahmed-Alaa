@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f5f4ee">
+  <title>رسائل التهنئة | أحمد و آلاء </title>
+  <meta property="og:description" content="١١ نوفمبر ٢٠٢٦" />
+  <meta property="og:title" content="رسائل التهنئة | أحمد و آلاء " />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Alexandria:wght@400;500;600;700&family=Amiri:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script>
+    window.guestbookLoadTimeout = window.setTimeout(() => {
+      const status = document.querySelector('#status');
+      if (!status || status.hidden) return;
+      status.replaceChildren();
+      status.classList.add('status-error');
+      status.textContent = 'استمر التحميل؟ افتح الصفحة عبر خادم محلي وتأكد من اتصال الإنترنت.';
+    }, 12000);
+  </script>
+  <script defer src="https://www.gstatic.com/firebasejs/11.10.0/firebase-app-compat.js"></script>
+  <script defer src="https://www.gstatic.com/firebasejs/11.10.0/firebase-firestore-compat.js"></script>
+  <script defer src="app.js"></script>
+</head>
+<body>
+  <main class="page-shell">
+    <header class="topbar">
+      <a class="brand" href="#top" aria-label="رسائل التهنئة - الرئيسية">
+        <span class="brand-mark" aria-hidden="true">م</span>
+        <span>دفتر التهاني</span>
+      </a>
+      <span class="live-indicator"><span></span> رسائل الأحباب</span>
+    </header>
+
+    <section class="intro" id="top" aria-labelledby="page-title">
+      <div class="intro-copy">
+        <p class="eyebrow">لحظات تستحق أن تُحفظ</p>
+        <h1 id="page-title">كلماتكم <em>فرحة</em> أخرى</h1>
+        <p class="intro-description">كل تهنئة هنا حكاية جميلة، وكل كلمة بتخلّي الفرحة تكبر.</p>
+      </div>
+      <div class="intro-art" aria-hidden="true">
+        <span class="art-spark spark-one">✳</span>
+        <span class="art-spark spark-two">✦</span>
+        <span class="art-ring"></span>
+        <span class="art-heart">♥</span>
+      </div>
+    </section>
+
+    <section class="messages-section" aria-labelledby="messages-title">
+      <div class="section-heading">
+        <div>
+          <p class="eyebrow">من القلب إلى القلب</p>
+          <h2 id="messages-title">رسائل التهنئة</h2>
+        </div>
+        <div class="message-count" aria-live="polite"><strong id="message-count">—</strong><span>رسالة</span></div>
+      </div>
+
+      <div id="status" class="status" role="status" aria-live="polite">
+        <span class="loading-indicator" aria-hidden="true"></span>
+        <span>بنجهّز رسائلكم الجميلة...</span>
+      </div>
+      <div id="messages" class="messages-grid" aria-label="قائمة رسائل التهنئة"></div>
+    </section>
+
+    <footer class="footer"><span class="footer-star" aria-hidden="true">✳</span> بكل المحبة، شكرًا لكل كلمة حلوة</footer>
+  </main>
+</body>
+</html>
